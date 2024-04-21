@@ -14,7 +14,7 @@ datasource db {
 }
 
 model Doctor {
-  id              Int         @id @default(autoincrement())
+  id              Int         @id @default(autoincrement()) @unique
   FullName        String
   date_of_birth   DateTime
   email           String      @unique
@@ -31,7 +31,7 @@ model Doctor {
 }
 
 model MedicalExp {
-  id         Int     @id @default(autoincrement())
+  id         Int     @id @default(autoincrement()) @unique
   speciality String
   id_card    String
   bio        String
@@ -41,7 +41,7 @@ model MedicalExp {
 }
 
 model Request {
-  id        Int      @id @default(autoincrement())
+  id        Int      @id @default(autoincrement()) @unique
   message   String
   status    String
   createdAt DateTime @default(now())
@@ -54,7 +54,7 @@ model Request {
 }
 
 model Report {
-  id                       Int      @id @default(autoincrement())
+  id                       Int      @id @default(autoincrement()) @unique
   Familial_Medical_History String[]
   Allergies                String[]
   PastIllness              String[]
@@ -67,7 +67,7 @@ model Report {
 }
 
 model Patient {
-  id                Int          @id @default(autoincrement())
+  id                Int          @id @default(autoincrement()) @unique
   FullName          String
   date_of_birth     DateTime
   email             String       @unique
@@ -81,9 +81,8 @@ model Patient {
   requests          Request[]
   medicalInfo       MedicalInfo?
 }
-
 model MedicalInfo {
-  id                       Int      @id @default(autoincrement())
+  id                       Int      @id @default(autoincrement()) @unique
   Familial_Medical_History String[]
   Allergies                String[]
   PastIllness              String[]
