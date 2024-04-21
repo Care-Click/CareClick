@@ -20,15 +20,21 @@ function Signin({navigation}:any) {
          <Text style={styles.Email}>Email</Text>
          <TextInput
          style={styles.input}
-         value='ex@gmail.com'
+         placeholder='ex@gmail.com'
+         
          />
          <View style ={styles.container}>
-         <Text style={styles.Email}>
+         <Text 
+         
+         style={styles.password}
+       
+         >
           Password
          </Text>
          <TextInput
          style={styles.input}
-         value='********'
+         secureTextEntry={true}
+         placeholder='*******'
          />
          </View>
          
@@ -61,12 +67,13 @@ const styles = StyleSheet.create({
   },
   title : {
     marginLeft : 50,
-    marginTop: 10 ,
+    marginTop: -40,
     fontSize : 25,
   },
   Email : {
     color : "grey",
-    marginLeft : 20
+    marginLeft : 20,
+    marginTop : 20
   },
   name: {
     marginLeft : 80,
@@ -82,7 +89,8 @@ const styles = StyleSheet.create({
     padding: 10,
      borderRadius : 20 , 
      width : 300 , 
-      color : "grey"
+    color : "black" , 
+    
   },
   container : {
 marginTop : 30
@@ -96,7 +104,7 @@ button : {
   marginTop : 30 ,
   marginLeft : 60, 
   color : "#FFFFFF",
-  fontStyle : 'italic',
+   
   
 }, 
 container1 : {
@@ -105,8 +113,7 @@ container1 : {
 
  navigation : {
   color : "#1DBED3",
-  fontSize : 20,
-  
+  fontSize : 15,
  } ,
 
  position : {
@@ -116,8 +123,17 @@ container1 : {
 
  account : {
    color : "#888888",
-   fontSize : 20,
+   fontSize : 15,
+ },
+
+ password : {
+  marginTop : -10, 
+  marginLeft : 20 ,
+  color : "grey" ,
+
+
  }
+
 
  
     
