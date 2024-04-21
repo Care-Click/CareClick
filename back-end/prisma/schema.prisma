@@ -25,6 +25,7 @@ model Doctor {
   location        String
   verified        Boolean
   status          Boolean
+  role            String
   patients        Patient[]   @relation("DoctorToPatient")
   doctorRequests  Request[]   @relation("DoctorRequests")
   MedicalExp      MedicalExp?
@@ -41,23 +42,29 @@ model MedicalExp {
 }
 
 model Request {
-  id         Int      @id @default(autoincrement())
-  message    String
-  status     String
-  createdAt  DateTime @default(now())
-  report     Report?  @relation("RequestToReport")
-  report_id  Int?
-  Doctor     Doctor?  @relation("DoctorRequests",fields: [doctorId], references: [id])
-  doctorId   Int?
-  Patient    Patient? @relation(fields: [patientId], references: [id])
-  patientId  Int?
+  id        Int      @id @default(autoincrement())
+  message   String
+  status    String
+  createdAt DateTime @default(now())
+  report    Report?  @relation("RequestToReport")
+  report_id Int?
+  Doctor    Doctor?  @relation("DoctorRequests", fields: [doctorId], references: [id])
+  doctorId  Int?
+  Patient   Patient? @relation(fields: [patientId], references: [id])
+  patientId Int?
 }
 
 model Report {
-  id         Int     @id @default(autoincrement())
-  content    String
-  request    Request @relation(name: "RequestToReport", fields: [request_id], references: [id])
-  request_id Int     @unique
+  id                       Int      @id @default(autoincrement())
+  Familial_Medical_History String[]
+  Allergies                String[]
+  PastIllness              String[]
+  Surgeries                String[]
+  Medications              String[]
+  Chronic_Illness          String[]
+  Imaging_test_results     String[]
+  request                  Request  @relation(name: "RequestToReport", fields: [request_id], references: [id])
+  request_id               Int      @unique
 }
 
 model Patient {
@@ -71,20 +78,21 @@ model Patient {
   profile_picture   String
   location          String
   verification_code String
+  role              String
   doctors           Doctor[]     @relation("DoctorToPatient")
-  requests          Request[]   
+  requests          Request[]
   medicalInfo       MedicalInfo?
 }
 
 model MedicalInfo {
   id                       Int      @id @default(autoincrement())
-  Familial_Medical_History String
+  Familial_Medical_History String[]
   Allergies                String[]
   PastIllness              String[]
   Surgeries                String[]
   Medications              String[]
   Chronic_Illness          String[]
-  Imaging_test_results     String
+  Imaging_test_results     String[]
   patient                  Patient? @relation(fields: [patientId], references: [id])
   patientId                Int?     @unique
 }

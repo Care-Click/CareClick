@@ -1,74 +1,82 @@
 [
-    {
-      "id": 1,
-      "dateTime": "2024-04-20T08:00:00",
-      "patientsId": 1,
-      "Description": "chest pain, needs immediate assessment",
-      "createdAt": "2024-04-20T10:15:00"
-    },
-    {
-      "id": 2,
-      "dateTime": "2024-04-22T14:30:00",
-      "patientsId": 2,
-      "Description": "Suspected fracture, urgent X-ray and orthopedic consult required",
-      "createdAt": "2024-04-20T11:45:00"
-    },
-    {
-      "id": 3,
-      "dateTime": "2024-04-25T11:00:00",
-      "patientsId": 3,
-      "Description": "Severe allergic reaction, immediate treatment and observation needed",
-      "createdAt": "2024-04-21T09:30:00"
-    },
-    {
-      "id": 4,
-      "dateTime": "2024-04-27T09:45:00",
-      "patientsId": 4,
-      "Description": "Sudden onset of abdominal pain, urgent abdominal ultrasound required",
-      "createdAt": "2024-04-22T14:00:00"
-    },
-    {
-      "id": 5,
-      "dateTime": "2024-04-30T13:15:00",
-      "patientsId": 5,
-      "Description": "Breathing difficulty and wheezing, immediate respiratory assessment needed",
-      "createdAt": "2024-04-22T16:30:00"
-    },
-    {
-      "id": 6,
-      "dateTime": "2024-05-02T10:30:00",
-      "patientsId": 6,
-      "Description": "Acute eye pain and vision loss, urgent ophthalmology consult required",
-      "createdAt": "2024-04-23T11:20:00"
-    },
-    {
-      "id": 7,
-      "dateTime": "2024-05-05T15:00:00",
-      "patientsId": 7,
-      "Description": "Traumatic head injury, immediate neurological assessment needed",
-      "createdAt": "2024-04-24T09:45:00"
-    },
-    {
-      "id": 8,
-      "dateTime": "2024-05-07T12:45:00",
-      "patientsId": 8,
-      "Description": "Uncontrolled bleeding, urgent hematology consult required",
-      "createdAt": "2024-04-25T08:10:00"
-    },
-    {
-      "id": 9,
-      "dateTime": "2024-05-10T09:30:00",
-      "patientsId": 9,
-      "Description": "Severe back pain with leg weakness, urgent spine evaluation needed",
-      "createdAt": "2024-04-26T10:55:00"
-    },
-    {
-      "id": 10,
-      "dateTime": "2024-05-12T11:15:00",
-      "patientsId": 10,
-      "Description": "Persistent high fever and confusion, urgent infectious disease consult required",
-      "createdAt": "2024-04-27T13:20:00"
-    }
-  ]
-  
-
+  {
+    "message": "Fever and sore throat",
+    "status": "Pending",
+    "createdAt": "2022-04-25T10:00:00Z",
+    "report_id": null,
+    "doctorId": 1,
+    "patientId": 1
+  },
+  {
+    "message": "Back pain and difficulty walking",
+    "status": "Accepted",
+    "createdAt": "2022-04-26T11:30:00Z",
+    "report_id": 1,
+    "doctorId": 2,
+    "patientId": 2
+  },
+  {
+    "message": "Chest pain and shortness of breath",
+    "status": "Pending",
+    "createdAt": "2022-04-27T14:45:00Z",
+    "report_id": null,
+    "doctorId": 3,
+    "patientId": 3
+  },
+  {
+    "message": "Abdominal pain and nausea",
+    "status": "Accepted",
+    "createdAt": "2022-04-28T16:20:00Z",
+    "report_id": 2,
+    "doctorId": 1,
+    "patientId": 4
+  },
+  {
+    "message": "Headache and dizziness",
+    "status": "Pending",
+    "createdAt": "2022-04-29T09:00:00Z",
+    "report_id": null,
+    "doctorId": 2,
+    "patientId": 5
+  },
+  {
+    "message": "Joint pain and stiffness",
+    "status": "Accepted",
+    "createdAt": "2022-04-30T13:10:00Z",
+    "report_id": 3,
+    "doctorId": 3,
+    "patientId": 6
+  },
+  {
+    "message": "Numbness and tingling in extremities",
+    "status": "Pending",
+    "createdAt": "2022-05-01T11:45:00Z",
+    "report_id": null,
+    "doctorId": 1,
+    "patientId": 7
+  },
+  {
+    "message": "Vision problems and eye pain",
+    "status": "Accepted",
+    "createdAt": "2022-05-02T15:30:00Z",
+    "report_id": 4,
+    "doctorId": 2,
+    "patientId": 8
+  },
+  {
+    "message": "Difficulty sleeping and fatigue",
+    "status": "Pending",
+    "createdAt": "2022-05-03T08:20:00Z",
+    "report_id": null,
+    "doctorId": 3,
+    "patientId": 9
+  },
+  {
+    "message": "Skin rash and itching",
+    "status": "Accepted",
+    "createdAt": "2022-05-04T10:50:00Z",
+    "report_id": 5,
+    "doctorId": 1,
+    "patientId": 10
+  }
+]
