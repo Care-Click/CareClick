@@ -1,5 +1,5 @@
 [
-    {
+  {
       "id": 1,
       "FullName": "Alice Johnson",
       "date_of_birth": "1990-01-01T00:00:00Z",
@@ -9,9 +9,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "New York, USA",
-      "verification_code": "123456"
-    },
-    {
+      "verification_code": "123456",
+      "role": "patient"
+  },
+  {
       "id": 2,
       "FullName": "Bob Smith",
       "date_of_birth": "1991-02-02T00:00:00Z",
@@ -21,9 +22,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Los Angeles, USA",
-      "verification_code": "234567"
-    },
-    {
+      "verification_code": "234567",
+      "role": "patient"
+  },
+  {
       "id": 3,
       "FullName": "Carol Williams",
       "date_of_birth": "1992-03-03T00:00:00Z",
@@ -33,9 +35,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "Chicago, USA",
-      "verification_code": "345678"
-    },
-    {
+      "verification_code": "345678",
+      "role": "patient"
+  },
+  {
       "id": 4,
       "FullName": "David Brown",
       "date_of_birth": "1993-04-04T00:00:00Z",
@@ -45,9 +48,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Miami, USA",
-      "verification_code": "456789"
-    },
-    {
+      "verification_code": "456789",
+      "role": "patient"
+  },
+  {
       "id": 5,
       "FullName": "Emma Miller",
       "date_of_birth": "1994-05-05T00:00:00Z",
@@ -57,9 +61,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "San Francisco, USA",
-      "verification_code": "567890"
-    },
-    {
+      "verification_code": "567890",
+      "role": "patient"
+  },
+  {
       "id": 6,
       "FullName": "Frank Davis",
       "date_of_birth": "1995-06-06T00:00:00Z",
@@ -69,9 +74,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Seattle, USA",
-      "verification_code": "678901"
-    },
-    {
+      "verification_code": "678901",
+      "role": "patient"
+  },
+  {
       "id": 7,
       "FullName": "Grace Wilson",
       "date_of_birth": "1996-07-07T00:00:00Z",
@@ -81,9 +87,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "Dallas, USA",
-      "verification_code": "789012"
-    },
-    {
+      "verification_code": "789012",
+      "role": "patient"
+  },
+  {
       "id": 8,
       "FullName": "Henry Martinez",
       "date_of_birth": "1997-08-08T00:00:00Z",
@@ -93,9 +100,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Houston, USA",
-      "verification_code": "890123"
-    },
-    {
+      "verification_code": "890123",
+      "role": "patient"
+  },
+  {
       "id": 9,
       "FullName": "Isabella Thompson",
       "date_of_birth": "1998-09-09T00:00:00Z",
@@ -105,9 +113,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "Atlanta, USA",
-      "verification_code": "901234"
-    },
-    {
+      "verification_code": "901234",
+      "role": "patient"
+  },
+  {
       "id": 10,
       "FullName": "Jack Anderson",
       "date_of_birth": "1999-10-10T00:00:00Z",
@@ -117,9 +126,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Boston, USA",
-      "verification_code": "012345"
-    },
-    {
+      "verification_code": "012345",
+      "role": "patient"
+  },
+  {
       "id": 11,
       "FullName": "Kelly Garcia",
       "date_of_birth": "2000-11-11T00:00:00Z",
@@ -129,9 +139,10 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "Phoenix, USA",
-      "verification_code": "123456"
-    },
-    {
+      "verification_code": "123456",
+      "role": "patient"
+  },
+  {
       "id": 12,
       "FullName": "Liam Rodriguez",
       "date_of_birth": "2001-12-12T00:00:00Z",
@@ -141,9 +152,10 @@
       "Gender": "Male",
       "profile_picture": "./images/male.png",
       "location": "Denver, USA",
-      "verification_code": "234567"
-    },
-    {
+      "verification_code": "234567",
+      "role": "patient"
+  },
+  {
       "id": 13,
       "FullName": "Mia Martinez",
       "date_of_birth": "2002-01-13T00:00:00Z",
@@ -153,6 +165,7 @@
       "Gender": "Female",
       "profile_picture": "./images/female.png",
       "location": "Philadelphia, USA",
-      "verification_code": "345678"
-    }
+      "verification_code": "345678",
+      "role": "patient"
+  }
 ]
