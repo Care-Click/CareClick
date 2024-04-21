@@ -32,22 +32,14 @@ const SignUp = () => {
       <div className="bg-gray-100 p-8 min-h-screen flex justify-center items-center overflow-x-hidden">
   <form className="w-full max-w-2xl p-6 bg-white rounded-md shadow-lg overflow-hidden">
     <div className="flex flex-wrap -mx-3 mb-4">
-      {/* First Name */}
+    <div className="img-holder w-20 ml-60">
+                <img src={'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'} alt="" id="img" className="img" />
+                <input type="file" accept="image/*"/>
+              </div>
+      {/* Full Name */}
       <div className="p-3 w-full md:w-1/2">
         <label className="block text-gray-700 text-sm font-bold mb-1">
-          First Name
-        </label>
-        <input
-          className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-300 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
-          type="text"
-          placeholder="ex: John"
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-      </div>
-      {/* Last Name */}
-      <div className="p-3 w-full md:w-1/2">
-        <label className="block text-gray-700 text-sm font-bold mb-1">
-          Last Name
+          Full Name
         </label>
         <input
           className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-300 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"
