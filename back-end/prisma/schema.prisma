@@ -25,6 +25,7 @@ model Doctor {
   location        String
   verified        Boolean
   status          Boolean
+  role            String
   patients        Patient[]   @relation("DoctorToPatient")
   doctorRequests  Request[]   @relation("DoctorRequests")
   MedicalExp      MedicalExp?
@@ -77,6 +78,7 @@ model Patient {
   profile_picture   String
   location          String
   verification_code String
+  role              String
   doctors           Doctor[]     @relation("DoctorToPatient")
   requests          Request[]
   medicalInfo       MedicalInfo?

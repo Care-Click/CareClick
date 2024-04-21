@@ -2,6 +2,8 @@ const prisma = require("./prisma");
 const doctors = require("../data/doctors.json");
 const patients = require("../data/patiens.json");
 const patientsMedInfos = require("../data/patientsMedInfo.json");
+const doctorsmedinfos = require("../data/doctorsmedinfo.json");
+
 const Requests = require("../data/requests.json");
 const Reports = require("../data/reports.json");
 const doctorsmedinfos = require("../data/doctorsmedinfo.json");
