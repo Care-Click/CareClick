@@ -2,7 +2,7 @@ const prisma = require("./prisma");
 const doctors = require("../data/doctors.json");
 const patients = require("../data/patiens.json");
 const patientsMedInfos = require("../data/patientsMedInfo.json");
-const doctorsmedinfos = require("../data/doctorsmedinfo.json");
+;
 
 const Requests = require("../data/requests.json");
 const Reports = require("../data/reports.json");
@@ -15,6 +15,7 @@ async function seed() {
         data: doctor,
       });
     }
+
     for (const patient of patients) {
       await prisma.patient.create({
         data: patient,
