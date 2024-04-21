@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {signup,getOne,signin,getAllPatient,updatePatientMed,search,sendReq} = require('../controllers/material.js')
+const {signup,getOne,signin,getAllPatient,updatePatientMed,search,sendReq} = require('../controllers/doctors.js')
 
 router.post("/signup", signup);
 router.post("/signin", signin);
