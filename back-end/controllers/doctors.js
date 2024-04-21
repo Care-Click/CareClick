@@ -2,8 +2,43 @@ const prisma = require("../db/prisma");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const signup = async (req, res) => {
+const { upload } = require("../helper/helperFunction.js");
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
+const signup = async (req, res) => {
+  try {
+    let { password, date_of_birth, FullName, email, phone_number, gender, location } = req.body;
+    date_of_birth = new Date(date_of_birth);
+    date_of_birth = date_of_birth.toISOString();
+
+    // Hashing the password
+    const hashedPassword = bcrypt.hashSync(password, 8);
+    const imageBuffer = req.files;
+    const imageUrl = await upload(imageBuffer);
+
+    const newDoctor = {
+      FullName,
+      email,
+      password: hashedPassword,
+      date_of_birth,
+      phone_number,
+      gender,
+      imageUrl,
+      location,
+      role: 'doctor', // Assuming doctor signup
+      verified: true,
+      status: true
+    };
+
+    // Save doctor data to the database
+    let result = await prisma.doctor.create({ data: newDoctor });
+
+    res.status(201).send("Doctor Registered");
+  } catch (error) {
+    console.log(error);
+    res.status(401).send(error);
+  }
 };
 
 const signin = async (req, res) => { 
