@@ -4,10 +4,12 @@ const patients = require("../data/patiens.json");
 const patientsMedInfos = require("../data/patientsMedInfo.json");
 const Requests = require("../data/requests.json");
 const Reports = require("../data/reports.json");
+const doctorsmedinfos = require("../data/doctorsmedinfo.json");
+
 
 async function seed() {
     for (const doctor of doctors) {
-      await prisma.Doctor.create({
+      await prisma.doctor.create({
         data: doctor,
       });
     }
@@ -17,22 +19,22 @@ async function seed() {
       });
     }
     for (const patientsMedInfo of patientsMedInfos) {
-      await prisma.MedicalInfo.create({
+      await prisma.medicalInfo.create({
         data: patientsMedInfo,
       });
     }
     for (const medicalExp of doctorsmedinfos) {
-      await prisma.MedicalExp.create({
+      await prisma.medicalExp.create({
         data: medicalExp,
       });
     }
   for (const Request of Requests) {
-    await prisma.Request.create({
+    await prisma.request.create({
       data: Request,
     });
   }
 for (const Report of Reports) {
-    await prisma.Report.create({
+    await prisma.report.create({
       data: Report,
     });
   }
