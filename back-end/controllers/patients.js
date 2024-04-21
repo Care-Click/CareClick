@@ -20,7 +20,7 @@ const signup = async (req, res) => {
     res.status(401).send(error);
   }
 };
-
+const signin = async (req, res) => {};
 const getOne = async (req, res) => {};
 const sendReq = async (req, res) => {};
 const search = async (req, res) => {};
