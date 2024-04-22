@@ -1,5 +1,6 @@
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require("../utils/cloudinary");
 const { Readable } = require("stream");
+
 
 const upload = async (buffer) => {
     const imageStream = Readable.from(buffer);
