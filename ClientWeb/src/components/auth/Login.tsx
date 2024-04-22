@@ -18,7 +18,7 @@ const Login = () => {
     try {
       const info = { email, password };
       const { status, data } = await axios.post(
-        "http://localhost:300/api/doctors/signin",
+        "http://localhost:3000/api/doctors/signin",
         info
       );
       //console.log (data)
