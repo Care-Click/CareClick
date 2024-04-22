@@ -1,7 +1,55 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { StyleSheet ,View, Text , Button , Image , TextInput , Pressable} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 function Signin({navigation}:any) {
-  
+
+  const   [Email,setEmail]=useState("")
+  const [Password,setPassword]=useState("")
+
+  const handlesignin = async function signin(email:String , password:String) {
+    console.log(Email,Password)
+    
+     try {
+const {data} = await axios.post("http://localhost:3000/api/patients/signin",{
+        email:email,
+        password : password
+     })
+     console.log(data)
+
+    //  const storeData = async () => {
+    //   try {
+    //     await AsyncStorage.setItem('token', JSON.stringify(data.token));
+    //   } catch (e) {
+    //     console.log(e)
+    //   }
+    // };
+    await AsyncStorage.setItem('token', JSON.stringify(data.token));
+    const getData = async () => {
+      try {
+        const value = await AsyncStorage.getItem('token');
+        const token = value
+         console.log(token)
+        
+        
+      } catch (e) {
+        // error reading value
+      }
+    };
+        
+     
+    getData()
+
+    
+    
+     
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+
   return (
     <View>
         
@@ -21,6 +69,7 @@ function Signin({navigation}:any) {
          <TextInput
          style={styles.input}
          placeholder='ex@gmail.com'
+         onChangeText={text=>setEmail(text)}
          
          />
          <View style ={styles.container}>
@@ -35,11 +84,12 @@ function Signin({navigation}:any) {
          style={styles.input}
          secureTextEntry={true}
          placeholder='*******'
+         onChangeText={text=>setPassword(text)}
          />
          </View>
          
          <Pressable 
-      
+       onPress={()=>{handlesignin(Email,Password)}}
        >
         <Text style={styles.button} > sign in </Text>
 
