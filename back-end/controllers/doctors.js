@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const prisma = require("../db/prisma");
 const { PrismaClient } = require('@prisma/client');
 const { upload } = require("../helper/helperFunction.js");
 
