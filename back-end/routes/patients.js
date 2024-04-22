@@ -5,6 +5,7 @@ const multer = require("multer");
 const {
   signup,
   signin,
+  getAllDoctors,
   getOneDoctor,
   sendReq,
   search,
@@ -15,6 +16,7 @@ const {
 router.post("/signup", signup);
 router.post("/signin", signin);
 router.get("/getNearByDoctors", getNear);
+router.get("/getAllDoctors",getAllDoctors);
 router.get("/getOneDoctor/:id", getOneDoctor);
 router.get("/search/:searched", search);
 router.post("/emergencyRequest", sendReq);
