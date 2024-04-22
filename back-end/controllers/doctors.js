@@ -1,10 +1,10 @@
 const prisma = require("../db/prisma");
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
-const { upload } = require("../helper/helperFunction.js");
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const { upload } = require("../helper/helperFunction.js");
+
+
 
 const signup = async (req, res) => {
   try {
