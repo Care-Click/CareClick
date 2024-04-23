@@ -38,9 +38,7 @@ function Signin({navigation}:any) {
          />
          </View>
          
-         <Pressable 
-      
-       >
+         <Pressable  >
         <Text style={styles.button} > sign in </Text>
 
        </Pressable>
