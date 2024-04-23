@@ -69,15 +69,55 @@ const signin = async (req, res) => {
     res.status(500).send("Internal server error");
   }
 };
-const getOne = async (req, res) => {};
-const sendReq = async (req, res) => {};
-const search = async (req, res) => {};
+
+const getAllDoctors = async (req, res) => {
+  try {
+    let result = await prisma.doctor.findMany()
+    console.log(result);
+    res.status(200).json(result)
+  } catch (err) {
+    console.log(err);
+    res.status(404).json({ error: " not found." })
+  }
+}
+
+const getOneDoctor = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const medexp = await prisma.medicalExp.findUnique({
+      where: { doctor_id: parseInt(id) },
+
+    });
+    const doctor = await prisma.doctor.findUnique({
+      where: { id: parseInt(id) },
+
+    });
+
+    if (!doctor) {
+      return res.status(404).json({ error: 'Doctor not found' });
+    }
+
+    res.json({...doctor,...medexp});
+  } catch (error) {
+    console.error('Error fetching doctor:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
+
+const sendReq = async (req, res) => {
+
+};
+const search = async (req, res) => {
+
+};
 const updateProfile = async (req, res) => {};
 const getNear = async (req, res) => {};
+
 module.exports = {
   signup,
   signin,
-  getOne,
+  getAllDoctors,
+  getOneDoctor,
   sendReq,
   search,
   getNear,

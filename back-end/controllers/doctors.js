@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const prisma = require("../db/prisma");
 const { PrismaClient } = require('@prisma/client');
 const { upload } = require("../helper/helperFunction.js");
 
@@ -45,10 +46,10 @@ const signup = async (req, res) => {
     // Save doctor data to the database
     let result = await prisma.doctor.create({ data: newDoctor });
 
-    res.status(201).send("Doctor Registered");
+    res.status(200).send(result);
   } catch (error) {
-    console.log(error);
     res.status(401).send(error);
+    console.log(error);
   }
 };
 
@@ -102,6 +103,29 @@ const signin = async (req, res) => {
   }
 };
 
+const createMedExp = async (req, res) => {
+  let { speciality, bio, medical_id } = req.body
+  var { doctor_id } = req.params
+  doctor_id = JSON.parse(doctor_id)
+  const card = req.files[0].buffer
+  const image = await upload(card);
+  try {
+    let medicalExp = await prisma.medicalExp.create({
+      data: {
+        speciality,
+        id_card: image,
+        bio,
+        doctor_id,
+        medical_id
+      }
+    })
+    res.status(201).send("Medical Experience Added Succesfully");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }
+}
+
 const getOne = async (req, res) => { };
 
 const sendReq = async (req, res) => { };
@@ -112,7 +136,6 @@ const updatePatientMed = async (req, res) => { };
 
 
 const getAllPatient = async (req, res) => {
-  console.log("😎");
   try {
     let result = await prisma.patient.findMany()
     console.log(result);
@@ -131,4 +154,5 @@ module.exports = {
   updatePatientMed,
   search,
   sendReq,
+  createMedExp,
 };

@@ -23,7 +23,7 @@ const SignUp = () => {
   if (valid) {
     var handleSignUp = async () => {
       if (password !== confirmPassword) {
-        return alert('password should be the same')
+        return alert('Password should be the same')
       }
       // Sign up logic
       try {
@@ -38,16 +38,20 @@ const SignUp = () => {
         formData.append("imageUrl", imageUrl as any);
         formData.append("location", location);
 
-        const res = await axios.post("http://localhost:3000/api/doctors/signup", formData, {
+        const result = await axios.post("http://localhost:3000/api/doctors/signup", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
+        
+        // Navigate to the desired location with state
+        navigate("/medicalExp", { state: result.data.id });
+        
+        
 
-        if (res.status === 201) {
-          navigate("/login");
-        }
+
       } catch (error) {
+
         console.log(error);
       }
     };
