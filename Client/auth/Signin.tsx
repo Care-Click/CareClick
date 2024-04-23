@@ -2,47 +2,37 @@ import React,{useState} from 'react'
 import { StyleSheet ,View, Text , Button , Image , TextInput , Pressable} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
+
+
+
+
 function Signin({navigation}:any) {
 
   const   [Email,setEmail]=useState("")
   const [Password,setPassword]=useState("")
+  
+
+
 
   const handlesignin = async function signin(email:String , password:String) {
     console.log(Email,Password)
-    
      try {
-const {data} = await axios.post("http://localhost:3000/api/patients/signin",{
+const {data} = await axios.post("http://192.168.10.2:3000/api/patients/signin",{
         email:email,
         password : password
      })
      console.log(data)
-
-    //  const storeData = async () => {
-    //   try {
-    //     await AsyncStorage.setItem('token', JSON.stringify(data.token));
-    //   } catch (e) {
-    //     console.log(e)
-    //   }
-    // };
     await AsyncStorage.setItem('token', JSON.stringify(data.token));
     const getData = async () => {
       try {
         const value = await AsyncStorage.getItem('token');
         const token = value
          console.log(token)
-        
-        
       } catch (e) {
         // error reading value
       }
     };
-        
-     
     getData()
-
-    
-    
-     
   } catch (error) {
     console.log(error)
   }
@@ -51,14 +41,12 @@ const {data} = await axios.post("http://localhost:3000/api/patients/signin",{
 
 
   return (
+
     <View>
-        
-        
-       
         <View>
         <Image
         style={styles.logo}
-        source={require('./assets/logo.png')}
+        source={require("../assets/logo.png")}
         />
         <Text style={styles.name}>CareClick</Text>
         </View>
@@ -101,7 +89,8 @@ const {data} = await axios.post("http://localhost:3000/api/patients/signin",{
        </View>
          
         
-         
+      
+  
         
     </View>
   )

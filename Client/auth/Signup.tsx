@@ -7,7 +7,7 @@ function Signup({navigation}:any) {
       <View style={styles.container1}>
       <Image style ={styles.logo}
         
-        source={require('./assets/logo.png')}
+        source={require("../assets/logo.png")}
         />
         <Text style={styles.name}>CareClick</Text>
         </View>
